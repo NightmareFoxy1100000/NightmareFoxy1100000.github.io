@@ -1,18 +1,18 @@
 var radioPlayer = document.getElementById('radioPlayer');
 
-//Set the default volume to 0.1 when the page loads
+// Set the default volume to 0.1 when the page loads
 radioPlayer.volume = 0.1;
 
-//Ensure the volume slider and input reflects this default value
+// Ensure the volume slider and input reflect this default value
 document.getElementById('volumeSlider').value = 0.1;
 document.getElementById('volumeInput').value = 0.1;
 
-document.getElementById('playButton').addEventListener('click', function() {
-   
+// Function to toggle between play and pause
+function togglePlayPause() {
     var radioSource = document.getElementById('radioSource');
+    var icon = document.getElementById("playPauseIcon");
 
-    // Replace this URL with the actual stream URL from Zeno.fm
-    var streamURL = 'https://stream.zeno.fm/xkpjkwiubidvv';  // Your Zeno.fm stream URL
+    var streamURL = 'https://stream.zeno.fm/xkpjkwiubidvv';
 
     // Check if the radio is already playing
     if (radioPlayer.paused || radioPlayer.currentTime === 0) {
@@ -20,25 +20,20 @@ document.getElementById('playButton').addEventListener('click', function() {
         radioSource.src = streamURL;
         radioPlayer.load(); // Reload the player with the new source
         radioPlayer.play();
-        document.getElementById('playButton').innerText = 'Stop Radio';
+        // Update the icon to the pause icon
+        icon.src = "img/pause.png";
+        icon.alt = "Pause";
     } else {
-        // Stop the radio and reset button
+        // Stop the radio and reset the icon to the play icon
         radioPlayer.pause();
-        document.getElementById('playButton').innerText = 'Play Radio';
+        icon.src = "img/play.png";
+        icon.alt = "Play";
     }
-});
-
-//Set the default volume to 0.1 when the page loads
-radioPlayer.volume = 0.1;
-
-//Ensure the volume slider and input reflects this default value
-document.getElementById('volumeSlider').value = 0.1;
-document.getElementById('volumeInput').value = 0.1;
+}
 
 // Volume control logic
 var volumeSlider = document.getElementById('volumeSlider');
 var volumeInput = document.getElementById('volumeInput');
-var radioPlayer = document.getElementById('radioPlayer');
 
 // Sync the slider and input box
 volumeSlider.addEventListener('input', function () {

@@ -8,7 +8,27 @@ body {
     margin: 0;
 }
 
+.background-container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;  /* Stack the title and radio player vertically */
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;  /* Space between title and the radio player */
+    color: #333;  /* Title text color */
+}
+
 .radio-container {
+    width: 100%; /* Ensure radio container takes full width */
     text-align: center;
 }
 
@@ -16,6 +36,15 @@ button {
     padding: 15px;
     font-size: 18px;
     cursor: pointer;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
 }
 
 audio {
@@ -32,4 +61,48 @@ audio {
 
 #volumeSlider {
     width: 200px;
+}
+
+.play-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Volume slider and input styles */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
 }
