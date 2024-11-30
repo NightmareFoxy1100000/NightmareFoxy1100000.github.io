@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.radio-container {
+    text-align: center;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+audio {
+    margin-top: 20px;
+    display: none;
+}
+
+.volume-controls {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#volumeSlider {
+    width: 200px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Radio Stream</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="radio-container">
+        <button id="playButton">Play Radio</button>
+         <div class="volume-controls">
+            <label for="volumeSlider">Volume: </label>
+            <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.5">
+            <input id="volumeInput" type="number" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <audio id="radioPlayer" controls>
+            <source id="radioSource" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
